@@ -3,58 +3,30 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class ReadFromFile {
-    private String camperFilename;
-    private String prefFilename;
-    private String csFilename;
+    private String dataFilename;
 
-    public ReadFromFile(String ca, String p, String cs){
-        this.camperFilename = ca;
-        this.prefFilename = p;
-        this.csFilename = cs;   
+    public ReadFromFile(String data){
+        this.dataFilename = data;  
     }
 
-    public List<String> readCamper() throws FileNotFoundException{
-        File cFile = new File(camperFilename);
-        Scanner cScan = new Scanner(cFile);
-        List<String> camper = new ArrayList<>();
-        while(cScan.hasNextLine()){
-            camper.add(cScan.nextLine());
+    public List<List<String>> readData() throws FileNotFoundException{
+        File dFile = new File(dataFilename);
+        Scanner dScan = new Scanner(dFile);
+        List<List<String>> data = new ArrayList<>();
+        while(dScan.hasNextLine()){
+            List<String> temp = Arrays.asList(dScan.nextLine().split(","));
+            data.add(temp);
         }
-        cScan.close();
-        return camper;
+        dScan.close();
+        return data;
     }
 
-    public List<List<String>> readPref() throws FileNotFoundException{
-        File pFile = new File(prefFilename);
-        Scanner pScan = new Scanner(pFile);
-        List<List<String>> pref = new ArrayList<>();
-        while(pScan.hasNextLine()){
-            List<String> pTemp = new ArrayList<>();
-            String [] pTempLine = pScan.nextLine().split(",");
-            for (String s: pTempLine){
-                pTemp.add(s);
-            }
-            pref.add(pTemp);
-        }
-        pScan.close();
-        return pref;
-
-    }
+//Uncomment to test readData from csv file
+// public static void main (String args[]) throws FileNotFoundException{
     
-    public List<List<Integer>> readCS() throws FileNotFoundException{
-        File csFile = new File(csFilename);
-        Scanner csScan = new Scanner(csFile);
-        List<List<Integer>> cabin = new ArrayList<>();
-        while(csScan.hasNextLine()){
-            List<Integer> csTemp = new ArrayList<>();
-            String [] csTempLine = csScan.nextLine().split(",");
-            for(String s: csTempLine){
-                csTemp.add(Integer.parseInt(s)); 
-            }
-            cabin.add(csTemp);
-        }
-        csScan.close();
-        return cabin;
-    } 
+//     ReadFromFile r = new ReadFromFile("lib/data/data.csv");
+//     List<List<String>> result = r.readData();
+//     System.out.println(result);
+// }
 
 }

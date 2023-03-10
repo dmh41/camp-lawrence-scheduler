@@ -1,8 +1,6 @@
 import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import java.io.IOException;
 
 public class Schedule {
@@ -13,13 +11,23 @@ public class Schedule {
     private List<String> classRestrictions;
     
     public Schedule() throws FileNotFoundException{
-        ReadFromFile r = new ReadFromFile("lib/CampersS4.txt", "lib/PrefsS4.txt", "lib/Cabin&SwimS4.txt");
-        List<String> cTemp = r.readCamper();
-        List<List<String>> pTemp = r.readPref();
-        List<List<Integer>> csTemp = r.readCS();
+        ReadFromFile r = new ReadFromFile("lib/data/data.csv");
+        List<List<String>> data = r.readData();
         campers = new ArrayList<>();
-        for (int i = 0; i < cTemp.size(); i++){
-            Camper c = new Camper(cTemp.get(i),pTemp.get(i),csTemp.get(i));
+        int dataWidth = data.get(0).size();
+        for (int i = 0; i < data.size(); i++){
+
+            String last = data.get(i).get(0);
+            String first = data.get(i).get(1);
+            String name = first+" "+last;
+            List<String> pref = new ArrayList<>();
+
+            for(int j = 4; j < dataWidth-1; j++){
+                pref.add(data.get(i).get(j));
+            }
+            int cabin = Integer.parseInt(data.get(i).get(2));
+            int swim = Integer.parseInt(data.get(i).get(3));
+            Camper c = new Camper(name,last,first,pref,cabin,swim);
             campers.add(c);
         }
         createCap();
@@ -28,7 +36,7 @@ public class Schedule {
     
     public HashMap<String,List<Integer>> createCap() throws FileNotFoundException{
         cap = new HashMap<>();
-        File classes = new File("lib/ClassesS4.txt");
+        File classes = new File("lib/data/classes.csv");
         Scanner scan = new Scanner(classes);
         while(scan.hasNextLine()){
             String[] temp = scan.nextLine().split(",");
@@ -60,7 +68,7 @@ public class Schedule {
                 continue;
             }
         }
-        Camper temp = new Camper(null,null,null);
+        Camper temp = new Camper(null,null,null,null,-1,-1);
         return temp;  
     }
     

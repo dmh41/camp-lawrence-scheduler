@@ -3,22 +3,34 @@ import java.util.*;
 public class Camper{
 
 private String name;
+private String first;
+private String last;
 private List<String> preferences;
 private int cabin;
 private int swim;
 private List<String> classes;
 
 
-public Camper(String n, List<String> list, List<Integer> cs){
+public Camper(String n, String l, String f, List<String> list, int c, int s){
     this.name = n;
+    this.first = f;
+    this.last = l;
     this.preferences = list;
-    this.cabin = cs.get(0);
-    this.swim = cs.get(1);
+    this.cabin = c;
+    this.swim = s;
     this.classes = new ArrayList<>();
 }
 
 public String getName(){
     return name;
+}
+
+public String getFirst(){
+    return first;
+}
+
+public String getLast(){
+    return last;
 }
 
 public List<String> getPreference(){
