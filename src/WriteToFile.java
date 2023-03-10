@@ -4,54 +4,55 @@ import java.io.IOException;
 public class WriteToFile {
     public WriteToFile(HashMap<String, List<String>> first, HashMap<String, List<String>> second, HashMap<String, List<String>> third,
     HashMap<String, List<String>> fourth, HashMap<String, List<String>> fifth, List<Camper> campers) throws IOException{ 
-        write(first, "lib/results/1stPeriod.txt");
-        write(second, "lib/results/2ndPeriod.txt");
-        write(third, "lib/results/3rdPeriod.txt");
-        write(fourth, "lib/results/4thPeriod.txt");
-        write(fifth, "lib/results/5thPeriod.txt");
+        FileWriter writer = new FileWriter("lib/results/period.csv");
+        write(first, 1, writer);
+        write(second, 2, writer);
+        write(third, 3, writer);
+        write(fourth, 4, writer);
+        write(fifth, 5, writer);
+        writer.close();
         writeCamper(campers);
 
     }
 
-    public void write(HashMap<String, List<String>> period, String fileName) throws IOException{
-        FileWriter writer = new FileWriter(fileName);
-        writer.write(fileName.substring(12) + "\n"+"\n");
+    public void write(HashMap<String, List<String>> period, int p, FileWriter f) throws IOException{
         int count = 0;
         for(String k: period.keySet()){
-            writer.write(k+":  "+"\n");
+            StringBuilder line = new StringBuilder();
+            line.append(p+",");
+            line.append(k+",");
             List<String> temp = period.get(k);
-            for(String a: temp){
-                writer.write(a+"\n");
+            int localCount = 0;
+            for(String s: temp){
+                if (localCount == temp.size() - 1){
+                    line.append(s); 
+                }
+                else{
+                    line.append(s+",");  
+                }
+                localCount++;
                 count++;
             }
-            writer.write("\n");
+            f.write(line+"\n");
         }
         System.out.println(count);
-        writer.close();
     }
 
     public void writeCamper(List<Camper> campers) throws IOException{
-        FileWriter writer = new FileWriter("lib/results/scheduleByCamper.txt");
-        writer.write("Camper Schedule" + "\n"+"\n");
-        writer.write("Name                   Cabin   Period 1            "+
-        "Period 2            Period 3            Period 4            Period 5" + "\n\n");
+        FileWriter writer = new FileWriter("lib/results/scheduleByCamper.csv");
         for (Camper c: campers){
-            String line = c.getName();
-            while(line.length()< 25){
-                line = line + " ";
-            }
-            if(c.getCabin() >= 10){
-                line = line + c.getCabin() + "    ";
-            }
-            else{
-                line = line + c.getCabin() + "     ";
-            }
-            for(String s: c.getClasses()){
-                String tempLine = s;
-                while(tempLine.length()<20){
-                    tempLine = tempLine+" ";
+            StringBuilder line = new StringBuilder();
+            line.append(c.getLast()+",");
+            line.append(c.getFirst()+",");
+            line.append(c.getCabin()+",");
+            List<String> activity = c.getClasses();
+            for (int i = 0; i< activity.size(); i++){
+                if(i == activity.size()-1){
+                    line.append(activity.get(i));
                 }
-                line = line + tempLine;
+                else{
+                    line.append(activity.get(i)+","); 
+                }
             }
             writer.write(line + "\n");
         }
@@ -59,7 +60,7 @@ public class WriteToFile {
     }
 
     public void declaration(){
-        System.out.println("All files have been written to text");
+        System.out.println("All files have been written to csv");
     }
     
 }

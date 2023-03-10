@@ -22,7 +22,7 @@ public class Schedule {
             String name = first+" "+last;
             List<String> pref = new ArrayList<>();
 
-            for(int j = 4; j < dataWidth-1; j++){
+            for(int j = 4; j < dataWidth; j++){
                 pref.add(data.get(i).get(j));
             }
             int cabin = Integer.parseInt(data.get(i).get(2));
@@ -307,9 +307,7 @@ public static void main (String[] args) throws IOException{
     result.declaration();
 
     Accuracy a = new Accuracy(s.campers);
-    List<Double> acc = a.findAccPref();
     Double ave = a.findAccClass();
-    System.out.println(acc);
     System.out.println(ave);
 }
 
