@@ -20,13 +20,4 @@ public class ReadFromFile {
         dScan.close();
         return data;
     }
-
-//Uncomment to test readData from csv file
-// public static void main (String args[]) throws FileNotFoundException{
-    
-//     ReadFromFile r = new ReadFromFile("lib/data/data.csv");
-//     List<List<String>> result = r.readData();
-//     System.out.println(result);
-// }
-
 }

@@ -1,22 +1,23 @@
 import java.util.*;
 import java.io.FileWriter;
 import java.io.IOException;
+
 public class WriteToFile {
-    public WriteToFile(HashMap<String, List<String>> first, HashMap<String, List<String>> second, HashMap<String, List<String>> third,
-    HashMap<String, List<String>> fourth, HashMap<String, List<String>> fifth, List<Camper> campers) throws IOException{ 
+    public WriteToFile(List<HashMap<String, List<String>>> periods, List<Camper> campers,
+    HashMap<String, List<String>> missed, int ave) throws IOException{ 
         FileWriter writer = new FileWriter("lib/results/period.csv");
-        write(first, 1, writer);
-        write(second, 2, writer);
-        write(third, 3, writer);
-        write(fourth, 4, writer);
-        write(fifth, 5, writer);
+        int count = 1;
+        for(HashMap<String, List<String>> m: periods){
+            write(m, count, writer);
+            count++;
+        }
         writer.close();
         writeCamper(campers);
+        writeAccuracy(missed, ave);
 
     }
 
     public void write(HashMap<String, List<String>> period, int p, FileWriter f) throws IOException{
-        int count = 0;
         for(String k: period.keySet()){
             StringBuilder line = new StringBuilder();
             line.append(p+",");
@@ -31,11 +32,9 @@ public class WriteToFile {
                     line.append(s+",");  
                 }
                 localCount++;
-                count++;
             }
             f.write(line+"\n");
         }
-        System.out.println(count);
     }
 
     public void writeCamper(List<Camper> campers) throws IOException{
@@ -59,8 +58,28 @@ public class WriteToFile {
         writer.close();
     }
 
+    public void writeAccuracy(HashMap<String, List<String>> missed, int ave) throws IOException{
+        FileWriter writer = new FileWriter("lib/results/accuracy.csv");
+        for(String k: missed.keySet()){
+            StringBuilder line = new StringBuilder();
+            line.append(k+ ",");
+            int count = 0;
+            for(String s: missed.get(k)){
+                if(count == missed.get(k).size() - 1){
+                    line.append(s);
+                }
+                else{
+                    line.append(s+","); 
+                }
+            }
+            writer.write(line + "\n");
+        }
+        writer.write("Code Accuracy,"+ave);
+        writer.close();
+    }
+
     public void declaration(){
-        System.out.println("All files have been written to csv");
+        System.out.println("All data has been written to csv.");
     }
     
 }

@@ -9,7 +9,7 @@ public class Accuracy {
     }
 
 
-    public Double findAccClass(){
+    public Integer findAccClass(){
         double ave = 0.0;
 
         for(Camper c: campers){
@@ -25,22 +25,29 @@ public class Accuracy {
             double camperAve = camperTotal/((c.getClasses().size()) - 1);
             ave = ave + camperAve;
         }
-        
-        return(ave/(campers.size()));
+        double temp = ave/(campers.size());
+        int result = ((int)(temp*100));
+        return(result);
     }
 
-    public List<HashMap<String, List<String>>> missedPref(){
-        List<HashMap<String, List<String>>> missed = new ArrayList<>();
+    public HashMap<String, List<String>> missedPref(){
+        HashMap<String, List<String>> missed = new HashMap<>();
         for(Camper c: campers){
             for(int i = 0; i < c.getClasses().size(); i++){
                 if(c.getClasses().get(i).equals("Swimming")){
                     continue;
                 }
                 if(!(c.getPreference().contains(c.getClasses().get(i)))){
-                    
+                    if(missed.keySet().contains(c.getName())){
+                        missed.get(c.getName()).add(c.getClasses().get(i));
+                    }
+                    else{
+                        List<String> place = new ArrayList<>();
+                        place.add(c.getClasses().get(i));
+                        missed.put(c.getName(), place);
+                    }
                 }
             }
-
         }
         return missed;
     }

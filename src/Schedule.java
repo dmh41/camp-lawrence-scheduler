@@ -84,7 +84,6 @@ public class Schedule {
             periodToSwim.add(16);
         }
         else if(p == 2){
-            //periodToSwim.add(16);
             periodToSwim.add(15);
             periodToSwim.add(11);
             periodToSwim.add(10);
@@ -134,8 +133,6 @@ public class Schedule {
                             if((period.get(key).size() < cap.get(key).get(0))){
                                 period.get(key).add(c.getName());
                                 c.getClasses().add(key);
-                                System.out.println(c.getName());
-                                System.out.println(currentPeriod);
                                 done = true;
                             }
                         }
@@ -179,7 +176,6 @@ public class Schedule {
                 }
             }    
         }
-        ///* 
         for(String k: period.keySet()){
             if(period.get(k).size() < cap.get(k).get(1)){
                 List<String> tester = period.get(k);
@@ -219,11 +215,7 @@ public class Schedule {
                             }
                         }
                          
-                        // Comment following if and loop to see how accurate code runs on data  
                         if(done == false){
-                            //remove comment on line below to see who doesn't get preference and which period
-                            System.out.print(currentPeriod + ": ");
-                            System.out.println(temp.getName());
                             for(String key: period.keySet()){
                                 if(key.equals("Sailing")){
                                     continue;
@@ -248,67 +240,31 @@ public class Schedule {
                 period.get(k).clear();
             }
         }
-        // */
         return period;
     }
 
 public static void main (String[] args) throws IOException{
 
+    List<HashMap<String, List<String>>> periods = new ArrayList<>();
+    int numPeriod = 5;
     Schedule s = new Schedule();
-    HashMap<String, List<String>> first = new HashMap<String, List<String>>();
-    s.currentPeriod = 1;
-    s.classRestrictions = new ArrayList<>();
-    s.classRestrictions.add("Frisbee");
-    s.classRestrictions.add("Rugby");
-    s.classRestrictions.add("Advanced Ropes");
-    s.classRestrictions.add("SuperRopes");
-    first = s.period();
-    s.classRestrictions.clear();
-    Collections.shuffle(s.campers);
 
-    HashMap<String, List<String>> second = new HashMap<String, List<String>>();
-    s.currentPeriod = 2;
-    s.classRestrictions.add("Frisbee");
-    s.classRestrictions.add("Soccer");
-    //s.classRestrictions.add("Advanced Ropes");
-    s.classRestrictions.add("Super Ropes");
-    second = s.period();
-    s.classRestrictions.clear();
-    Collections.shuffle(s.campers);
-
-    HashMap<String, List<String>> third = new HashMap<String, List<String>>();
-    s.currentPeriod = 3;
-    s.classRestrictions.add("Soccer");
-    s.classRestrictions.add("Rugby");
-    s.classRestrictions.add("Super Ropes");
-    third = s.period();
-    s.classRestrictions.clear();
-    Collections.shuffle(s.campers);
-
-    HashMap<String, List<String>> fourth = new HashMap<String, List<String>>();
-    s.currentPeriod = 4;
-    s.classRestrictions.add("Soccer");
-    s.classRestrictions.add("Rugby");
-    s.classRestrictions.add("Junior Ropes");
-    //s.classRestrictions.add("NoviceRopes");
-    fourth = s.period();
-    s.classRestrictions.clear();
-    Collections.shuffle(s.campers);
-
-    HashMap<String, List<String>> fifth = new HashMap<String, List<String>>();
-    s.currentPeriod = 5;
-    s.classRestrictions.add("Frisbee");
-    s.classRestrictions.add("Rugby");
-    //s.classRestrictions.add("Junior Ropes");
-    //s.classRestrictions.add("Novice Ropes");
-    fifth = s.period();
-
-    WriteToFile result = new WriteToFile(first, second, third, fourth, fifth, s.campers);
-    result.declaration();
-
+    for(int i = 0; i < numPeriod; i++){
+        HashMap<String, List<String>> curr = new HashMap<String, List<String>>();
+        s.currentPeriod = i+1;
+        s.classRestrictions = new ArrayList<>();
+        curr = s.period();
+        periods.add(curr);
+        s.classRestrictions.clear();
+        Collections.shuffle(s.campers);
+    }
+    
     Accuracy a = new Accuracy(s.campers);
-    Double ave = a.findAccClass();
-    System.out.println(ave);
+    int ave = a.findAccClass();
+    HashMap<String, List<String>> missedPref = a.missedPref();
+
+    WriteToFile result = new WriteToFile(periods, s.campers, missedPref, ave);
+    result.declaration();
 }
 
 }
