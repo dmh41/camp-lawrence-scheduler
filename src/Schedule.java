@@ -36,7 +36,7 @@ public class Schedule {
     
     public HashMap<String,List<Integer>> createCap() throws FileNotFoundException{
         cap = new HashMap<>();
-        File classes = new File("lib/data/classes.csv");
+        File classes = new File("lib/data/activities.csv");
         Scanner scan = new Scanner(classes);
         while(scan.hasNextLine()){
             String[] temp = scan.nextLine().split(",");

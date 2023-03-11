@@ -26,27 +26,27 @@
 1,Fitness,
 2,Rugby,
 2,Novice Ropes,
-2,Super Ropes,Matthew Stuparu,Sam Fountain,Christopher Morris,Matt Stuparu,Charlie Hamblet,Lucas Meyers,Chris Morris,Logan Mottram,Greyson Smith,James Willett
+2,Super Ropes,Matt Stuparu,Lucas Meyers,Logan Mottram,Greyson Smith,Samuel Hano,Tobey Phinney,Charlie Hamblet,James Willett,Dylan Reepmeyer,Matthew Stuparu
 2,Basketball,
-2,Riflery,Max Raphaelson,Jackson Alves,Kaiser Sklar,Benjamin Mallen,Hunter Fonseca,Wil LaBelle,Andre Blanchette,Brady Sugrue
-2,Sailing,Eldon Griffin,Haven Novack,Anders Smith,John Wallace,Keeler Frehsee,Benjamin Bergeron,Teague Healey,Mason Callahan,George Loving,Gavin Seitz,Brendan McCafferty,Kaden Blouin
-2,Campcraft,Luca Broggi,Tyler Hehir,Kieran Shanley,Abner Lee,Arthur Agans,Cooper Martin,Deacon Giamanco,Jackson Mix,Phinehas Lee,Tobey Phinney,Marcus Fiorillo,Ian OCallaghan,Ethan Champagne,Aiden Ratish,Parker Meyers,Cash Griffin
+2,Riflery,Max Raphaelson,Benjamin Mallen,Brady Sugrue,Kaiser Sklar,Jackson Alves,Finn Howard,Andre Blanchette,Hunter Fonseca
+2,Sailing,Keeler Frehsee,Eldon Griffin,Anders Smith,Haven Novack,Dylan Sykes,Benjamin Bergeron,John Wallace,Henry Strawbridge,George Loving,Gavin Seitz,Brendan McCafferty,Kaden Blouin
+2,Campcraft,Jackson Mix,Deacon Giamanco,Tyler Hehir,Luca Broggi,Abner Lee,Kieran Shanley,Cooper Martin,Phinehas Lee,Wil LaBelle,Arthur Agans,Ian OCallaghan,William McKenna,Ethan Champagne,Aiden Ratish,Parker Meyers,Cash Griffin
 2,Frisbee,
 2,Snorkeling,
-2,Archery,Louis Murphy,Vijay Elrod,Brady Desrosier,Connor Desrosier,Leo Stern,August Kim,Emmet Van Dellen,Griffin Tuscano,Collins Spillane,Colin Spracklin,Ryan Sherlock,Shamus Odonnell,Ian O'Callaghan,Jack Ryan
-2,General Sports,Nathaniel Cook,Ethan Ward,Nolan Abbott,Hunter Daley,Macintyre Slowey,Angelo Saade,Jameson Mix,PJ Vaillancourt,Luke Bernau
-2,Swimming,Carter Cagnina,Andrew Liu,Andrew Vaillancourt,Lincoln Hein,Thomas Silvestro,Connor Provencal,Max Clisby,Lucas Wheeler,William Mudholkar,Maximus Bolton,Grady McAuliffe,Jackson Scoll,Nolan Webb,Domenic Lister,Caleb Perlman,Alex Tybinkowski,Zachary Shields,Thomas Lentz,Ryan Chenda
+2,Archery,Emmet Van Dellen,Vijay Elrod,Brady Desrosier,Louis Murphy,Hunter Daley,Ryan Sherlock,Colin Spracklin,Connor Desrosier,Griffin Tuscano,Jack Ryan,Ian O'Callaghan,Leo Stern,August Kim,Mason Callahan
+2,General Sports,Ethan Ward,JD Souza,Nolan Abbott,Max Wilcken,Nathaniel Cook,Angelo Saade,Jameson Mix,PJ Vaillancourt,Luke Bernau
+2,Swimming,Grady McAuliffe,Nolan Webb,Domenic Lister,Zachary Shields,Max Clisby,William Mudholkar,Ryan Chenda,Thomas Silvestro,Alex Tybinkowski,Thomas Lentz,Connor Provencal,Carter Cagnina,Maximus Bolton,Jackson Scoll,Andrew Vaillancourt,Caleb Perlman,Lincoln Hein,Lucas Wheeler,Andrew Liu
 2,Junior Kayaking,Campbell Delaney,Tucker Griffin,Cooper Hamel
 2,Volleyball,
 2,Advanced Ropes,
 2,Soccer,
 2,Pickleball,
-2,WaterSkiing,Max Wilcken,Davis Price,JD Souza,Henry Strawbridge,Tristan Wilhelm,Finn Howard,Dylan Sykes,Samuel Hano,Henry Phillips,Matthew Martino
-2,Kayaking,Cooper Griffin,Carter Havemeyer,James McIntosh,Dylan Reepmeyer,Adrian Avini,Lucas Phinney,Coleman Lincoln,Celyn Heslin
+2,WaterSkiing,Collins Spillane,Shamus Odonnell,Marcus Fiorillo,Teague Healey,Christopher Morris,Davis Price,Macintyre Slowey,Tristan Wilhelm,Henry Phillips,Chris Morris
+2,Kayaking,Carter Havemeyer,Cooper Griffin,James McIntosh,Sam Fountain,Adrian Avini,Lucas Phinney,Coleman Lincoln,Celyn Heslin
 2,Photography,
 2,Junior Ropes,
-2,Ping Pong,Bodhi Matturro,Brigham Killourie,Ian Beer,Richie Travers,Wyatt Sifferlen,Henry Champagne,Jameson Cunningham,Thomas Pawlowski,Dylan Chenda,William McKenna
-2,Junior Basketball,Jamieson McNamee,Ryan Vanden-Eykel,Brendan O'Connor,Matthew Pelletier,Maxwell McAuliffe,Shane Demoree,Wes Sifferlen,Shea Campisi,Tyler Donovan,Ash Briggs,William Champagne,Holden Hamel,Simon Fraser
+2,Ping Pong,Dylan Chenda,Jameson Cunningham,Henry Champagne,Bodhi Matturro,Ian Beer,Matthew Martino,Thomas Pawlowski,Richie Travers,Wyatt Sifferlen,Brigham Killourie
+2,Junior Basketball,Jamieson McNamee,Matthew Pelletier,Ryan Vanden-Eykel,Maxwell McAuliffe,Brendan O'Connor,Wes Sifferlen,Shane Demoree,Shea Campisi,Tyler Donovan,William Champagne,Ash Briggs,Holden Hamel,Simon Fraser
 2,Arts & Crafts,
 2,Canoeing,
 2,Fitness,
@@ -54,77 +54,77 @@
 3,Novice Ropes,
 3,Super Ropes,
 3,Basketball,
-3,Riflery,Matthew Stuparu,Dylan Sykes,Ryan Chenda,Deacon Giamanco,Caleb Perlman,Lincoln Hein,Jameson Cunningham,Lucas Meyers
-3,Sailing,Benjamin Bergeron,Keeler Frehsee,John Wallace,Anders Smith,Teague Healey,Mason Callahan,Eldon Griffin,Brendan McCafferty,Haven Novack,George Loving,Kaden Blouin,Gavin Seitz
-3,Campcraft,Maxwell McAuliffe,Emmet Van Dellen,Grady McAuliffe,Davis Price,Jackson Scoll,Andrew Vaillancourt,Celyn Heslin
-3,Frisbee,Collins Spillane,Arthur Agans,Luca Broggi,Shea Campisi,Louis Murphy,Samuel Hano,William Champagne,Dylan Chenda
-3,Snorkeling,Tristan Wilhelm,Matthew Pelletier,Alex Tybinkowski,Maximus Bolton,Phinehas Lee,Cooper Hamel,Andrew Liu,Kaiser Sklar,Vijay Elrod,Simon Fraser
-3,Archery,Bodhi Matturro,Domenic Lister,Brigham Killourie,Henry Phillips,Connor Provencal,Andre Blanchette,Lucas Wheeler,Matt Stuparu,Nathaniel Cook,Wes Sifferlen,Hunter Daley,Henry Strawbridge,Abner Lee,Nolan Webb
-3,General Sports,Tyler Hehir,Max Wilcken,JD Souza,Jackson Mix,Richie Travers,Campbell Delaney,Brendan O'Connor
-3,Swimming,Cooper Griffin,Max Raphaelson,Finn Howard,Matthew Martino,Ethan Ward,James McIntosh,Carter Havemeyer,Ian OCallaghan,Leo Stern,Wyatt Sifferlen,Adrian Avini,Ian O'Callaghan,Jack Ryan,Aiden Ratish,Lucas Phinney,Cash Griffin,Benjamin Mallen,Macintyre Slowey,Hunter Fonseca,Wil LaBelle,William McKenna,Logan Mottram,Shamus Odonnell,Ian Beer,Jackson Alves,Nolan Abbott,Henry Champagne
+3,Riflery,Matthew Stuparu,Jameson Cunningham,Deacon Giamanco,Caleb Perlman,Teague Healey,Ryan Chenda,Marcus Fiorillo,Lucas Meyers
+3,Sailing,Eldon Griffin,Henry Strawbridge,Brendan McCafferty,Anders Smith,Haven Novack,George Loving,Benjamin Bergeron,John Wallace,Kaden Blouin,Dylan Sykes,Gavin Seitz,Keeler Frehsee
+3,Campcraft,Emmet Van Dellen,Grady McAuliffe,Maxwell McAuliffe,Davis Price,Jackson Scoll,Andrew Vaillancourt
+3,Frisbee,Shea Campisi,Luca Broggi,Louis Murphy,Arthur Agans,Samuel Hano,William Champagne
+3,Snorkeling,Andrew Liu,Tristan Wilhelm,Cooper Hamel,Alex Tybinkowski,Maximus Bolton,Matthew Pelletier,Phinehas Lee,Kaiser Sklar,Vijay Elrod
+3,Archery,Brigham Killourie,Henry Phillips,Connor Provencal,Lucas Wheeler,Andre Blanchette,Nolan Webb,Domenic Lister,Nathaniel Cook,Bodhi Matturro,Abner Lee,Matt Stuparu,William Mudholkar,Tobey Phinney,Collins Spillane
+3,General Sports,Tyler Hehir,Richie Travers,Hunter Daley,Jackson Mix,Mason Callahan,Campbell Delaney,Brendan O'Connor
+3,Swimming,Benjamin Mallen,Wil LaBelle,Max Raphaelson,Cooper Griffin,James McIntosh,Ian Beer,Cash Griffin,Nolan Abbott,Leo Stern,Henry Champagne,Ethan Ward,Adrian Avini,Ian O'Callaghan,Jackson Alves,Shamus Odonnell,William McKenna,Matthew Martino,Wyatt Sifferlen,Ian OCallaghan,Hunter Fonseca,Aiden Ratish,Logan Mottram,Finn Howard,Jack Ryan,Macintyre Slowey,Lucas Phinney,Carter Havemeyer
 3,Junior Kayaking,
 3,Volleyball,
 3,Advanced Ropes,
 3,Soccer,
-3,Pickleball,Colin Spracklin,Tucker Griffin,Jameson Mix,Ethan Champagne,Tyler Donovan,Zachary Shields,Griffin Tuscano,Cooper Martin,Luke Bernau
-3,WaterSkiing,Christopher Morris,Ryan Sherlock,August Kim,Ryan Vanden-Eykel,Charlie Hamblet,Thomas Pawlowski,Marcus Fiorillo,Dylan Reepmeyer,Greyson Smith,Thomas Silvestro
-3,Kayaking,Chris Morris,Sam Fountain,William Mudholkar,Angelo Saade,Carter Cagnina
+3,Pickleball,Colin Spracklin,Griffin Tuscano,Ethan Champagne,Zachary Shields,Tyler Donovan,Tucker Griffin,Jameson Mix,Cooper Martin,Luke Bernau
+3,WaterSkiing,Charlie Hamblet,Celyn Heslin,James Willett,Thomas Pawlowski,Sam Fountain,Max Wilcken,Greyson Smith,JD Souza,Lincoln Hein,Wes Sifferlen
+3,Kayaking,Dylan Reepmeyer,August Kim,Christopher Morris,Chris Morris,Angelo Saade,Carter Cagnina
 3,Photography,
 3,Junior Ropes,
-3,Ping Pong,Brady Desrosier,Kieran Shanley,Jamieson McNamee,Shane Demoree,James Willett,Tobey Phinney,Brady Sugrue,Ash Briggs
+3,Ping Pong,Kieran Shanley,Shane Demoree,Jamieson McNamee,Ryan Vanden-Eykel,Thomas Silvestro,Brady Desrosier,Brady Sugrue,Ash Briggs
 3,Junior Basketball,
-3,Arts & Crafts,Parker Meyers,Holden Hamel,PJ Vaillancourt,Thomas Lentz,Connor Desrosier,Max Clisby,Coleman Lincoln
-3,Canoeing,
+3,Arts & Crafts,Parker Meyers,Thomas Lentz,Connor Desrosier,Max Clisby,Holden Hamel,PJ Vaillancourt,Coleman Lincoln
+3,Canoeing,Dylan Chenda,Simon Fraser,Ryan Sherlock
 3,Fitness,
 4,Rugby,
-4,Novice Ropes,Campbell Delaney,George Loving,Ryan Chenda,Hunter Fonseca,Davis Price,Coleman Lincoln
+4,Novice Ropes,Ryan Chenda,Ryan Sherlock,George Loving,Campbell Delaney,Vijay Elrod,Henry Phillips,Davis Price,Celyn Heslin,Nathaniel Cook
 4,Super Ropes,
 4,Basketball,
-4,Riflery,Ian Beer,Cooper Griffin,Finn Howard,Nolan Abbott,Ethan Champagne,Carter Havemeyer,Wyatt Sifferlen,Marcus Fiorillo
-4,Sailing,Leo Stern,Maximus Bolton,Dylan Sykes,Henry Strawbridge,Andrew Vaillancourt,Andrew Liu,Lucas Wheeler,Zachary Shields,Max Raphaelson,Greyson Smith,Grady McAuliffe,Lincoln Hein,Adrian Avini
-4,Campcraft,Jameson Mix,Brady Desrosier,Jack Ryan,Wil LaBelle,Caleb Perlman,Benjamin Mallen,Connor Desrosier,Tristan Wilhelm,Ethan Ward
-4,Frisbee,Max Wilcken,Ian O'Callaghan,Hunter Daley,Henry Champagne
-4,Snorkeling,
-4,Archery,Phinehas Lee,Thomas Lentz,Deacon Giamanco,Tyler Donovan,Kieran Shanley,Benjamin Bergeron,Max Clisby,Mason Callahan,Tobey Phinney,Brady Sugrue,Holden Hamel,Carter Cagnina,Kaiser Sklar
+4,Riflery,Ethan Champagne,Cooper Griffin,Ian Beer,Nolan Abbott,Matthew Martino,Wil LaBelle,Mason Callahan,Carter Havemeyer
+4,Sailing,Teague Healey,Lincoln Hein,Max Raphaelson,Lucas Wheeler,Maximus Bolton,Andrew Liu,Zachary Shields,Greyson Smith,Grady McAuliffe,Andrew Vaillancourt,Leo Stern,Jackson Alves
+4,Campcraft,Jameson Mix,Connor Desrosier,Tristan Wilhelm,Brady Desrosier,Benjamin Mallen,Jack Ryan,Caleb Perlman,Ethan Ward,JD Souza
+4,Frisbee,Max Wilcken,Collins Spillane,Hunter Daley,Ian O'Callaghan,Henry Champagne,Lucas Phinney,Christopher Morris
+4,Snorkeling,Adrian Avini,Holden Hamel,Hunter Fonseca,Colin Spracklin,James McIntosh,Marcus Fiorillo,William Champagne
+4,Archery,Deacon Giamanco,Kieran Shanley,Phinehas Lee,Thomas Lentz,Macintyre Slowey,Wes Sifferlen,Benjamin Bergeron,Shamus Odonnell,Max Clisby,Tyler Donovan,Brady Sugrue,Wyatt Sifferlen,Kaiser Sklar,Carter Cagnina
 4,General Sports,
-4,Swimming,Shane Demoree,Brigham Killourie,Bodhi Matturro,Brendan O'Connor,Cooper Martin,Shea Campisi,Cooper Hamel,Anders Smith,Eldon Griffin,Louis Murphy,Tyler Hehir,Simon Fraser,Dylan Chenda,Thomas Pawlowski,Keeler Frehsee,Luke Bernau,Kaden Blouin,Tucker Griffin,Griffin Tuscano,Ash Briggs,Richie Travers,Luca Broggi
+4,Swimming,Shea Campisi,Tyler Hehir,Brendan O'Connor,Luca Broggi,Tucker Griffin,Ash Briggs,Kaden Blouin,Richie Travers,Bodhi Matturro,Cooper Hamel,Anders Smith,Shane Demoree,Eldon Griffin,Thomas Pawlowski,Griffin Tuscano,Simon Fraser,Dylan Chenda,Louis Murphy,Brigham Killourie,Luke Bernau,Keeler Frehsee,Cooper Martin
 4,Junior Kayaking,
-4,Volleyball,Arthur Agans,Jamieson McNamee,Ian OCallaghan,Emmet Van Dellen,Angelo Saade,Matthew Pelletier,Gavin Seitz
+4,Volleyball,Ian OCallaghan,Arthur Agans,Jamieson McNamee,Tobey Phinney,Emmet Van Dellen,Angelo Saade,Matthew Pelletier,Gavin Seitz,Haven Novack,PJ Vaillancourt
 4,Advanced Ropes,
-4,Soccer,Haven Novack,Wes Sifferlen,Jackson Alves,Jackson Scoll,William McKenna,Vijay Elrod,Henry Phillips,John Wallace,Lucas Phinney
+4,Soccer,
 4,Pickleball,
-4,WaterSkiing,Colin Spracklin,Celyn Heslin,Teague Healey,James Willett,Macintyre Slowey,Logan Mottram,Sam Fountain,Lucas Meyers,William Mudholkar,Aiden Ratish
-4,Kayaking,Alex Tybinkowski,August Kim,Matthew Stuparu,Christopher Morris,Jameson Cunningham,Matt Stuparu
-4,Photography,Connor Provencal,Nolan Webb,Abner Lee,Parker Meyers,Brendan McCafferty,James McIntosh
-4,Junior Ropes,JD Souza,Collins Spillane,PJ Vaillancourt,William Champagne,Nathaniel Cook
-4,Ping Pong,Jackson Mix,Ryan Vanden-Eykel,Thomas Silvestro,Andre Blanchette,Charlie Hamblet,Chris Morris,Matthew Martino,Samuel Hano,Dylan Reepmeyer,Shamus Odonnell
+4,WaterSkiing,Henry Strawbridge,Aiden Ratish,Thomas Silvestro,Logan Mottram,Jackson Scoll,Ryan Vanden-Eykel,Lucas Meyers,Dylan Sykes,Finn Howard,August Kim
+4,Kayaking,Matthew Stuparu,Alex Tybinkowski,William Mudholkar,Jameson Cunningham,Matt Stuparu
+4,Photography,Parker Meyers,Nolan Webb,Connor Provencal,Brendan McCafferty,Abner Lee
+4,Junior Ropes,
+4,Ping Pong,Charlie Hamblet,Andre Blanchette,Samuel Hano,Jackson Mix,Dylan Reepmeyer,James Willett,Chris Morris,William McKenna,John Wallace,Coleman Lincoln
 4,Junior Basketball,
 4,Arts & Crafts,
-4,Canoeing,Domenic Lister,Maxwell McAuliffe,Cash Griffin,Ryan Sherlock
+4,Canoeing,Domenic Lister,Cash Griffin,Maxwell McAuliffe,Sam Fountain
 4,Fitness,
 5,Rugby,
 5,Novice Ropes,
-5,Super Ropes,Samuel Hano,Dylan Reepmeyer,August Kim,Ian Beer,Deacon Giamanco,Tobey Phinney,Haven Novack,Nolan Abbott,Luca Broggi,Benjamin Mallen
-5,Basketball,Brady Sugrue,Ethan Ward,Parker Meyers,Ian OCallaghan,Angelo Saade,William McKenna,James Willett
+5,Super Ropes,August Kim,Deacon Giamanco,Jackson Scoll,Sam Fountain,Chris Morris,Christopher Morris,Ian Beer,Simon Fraser,Benjamin Mallen
+5,Basketball,Parker Meyers,William McKenna,Brady Sugrue,Ethan Ward,Angelo Saade,Ian OCallaghan,James Willett,Dylan Sykes
 5,Riflery,
-5,Sailing,Grady McAuliffe,Zachary Shields,Lincoln Hein,Maximus Bolton,Leo Stern,Andrew Liu,Henry Strawbridge,Greyson Smith,Andrew Vaillancourt,Lucas Wheeler,Adrian Avini,Dylan Sykes,Max Raphaelson
+5,Sailing,Teague Healey,Maximus Bolton,Andrew Vaillancourt,Andrew Liu,Lincoln Hein,Jackson Alves,Lucas Wheeler,Max Raphaelson,Leo Stern,Grady McAuliffe,Zachary Shields,Greyson Smith
 5,Campcraft,
-5,Frisbee,Thomas Pawlowski,Eldon Griffin,Griffin Tuscano,Connor Provencal,James McIntosh,Shane Demoree,Jack Ryan,Lucas Phinney
+5,Frisbee,Eldon Griffin,Griffin Tuscano,Thomas Pawlowski,Connor Provencal,Shane Demoree,Jack Ryan,James McIntosh,Richie Travers
 5,Snorkeling,
-5,Archery,William Mudholkar,Finn Howard,Shea Campisi,Macintyre Slowey,Ethan Champagne,Brendan O'Connor,Aiden Ratish
-5,General Sports,Thomas Silvestro,Wil LaBelle,Wyatt Sifferlen,Carter Havemeyer,Logan Mottram,Jameson Cunningham,Ian O'Callaghan,Henry Champagne
-5,Swimming,JD Souza,Tristan Wilhelm,Kieran Shanley,Ryan Vanden-Eykel,Nathaniel Cook,Hunter Daley,Connor Desrosier,Colin Spracklin,Vijay Elrod,George Loving,Collins Spillane,Emmet Van Dellen,PJ Vaillancourt,Phinehas Lee,Holden Hamel,Ryan Sherlock,Maxwell McAuliffe,William Champagne,John Wallace,Mason Callahan,Wes Sifferlen,Brendan McCafferty,Jamieson McNamee,Brady Desrosier,Arthur Agans,Campbell Delaney,Jackson Mix,Max Wilcken,Tyler Donovan,Henry Phillips,Davis Price,Matthew Pelletier,Jameson Mix,Abner Lee,Benjamin Bergeron
+5,Archery,Finn Howard,Henry Strawbridge,Shea Campisi,Dylan Chenda,Ethan Champagne,Aiden Ratish,Matthew Stuparu
+5,General Sports,Carter Havemeyer,Thomas Silvestro,Shamus Odonnell,Jameson Cunningham,Wil LaBelle,Wyatt Sifferlen,Macintyre Slowey,Logan Mottram,Ian O'Callaghan,Henry Champagne
+5,Swimming,Hunter Daley,Jameson Mix,Jackson Mix,Vijay Elrod,Jamieson McNamee,Holden Hamel,Brendan McCafferty,PJ Vaillancourt,Mason Callahan,Henry Phillips,Matthew Pelletier,Kieran Shanley,Colin Spracklin,Max Wilcken,Wes Sifferlen,Ryan Sherlock,Maxwell McAuliffe,Brady Desrosier,George Loving,Abner Lee,Emmet Van Dellen,Campbell Delaney,William Champagne,Phinehas Lee,Benjamin Bergeron,Tyler Donovan,John Wallace,JD Souza,Davis Price,Ryan Vanden-Eykel,Collins Spillane,Arthur Agans,Nathaniel Cook,Connor Desrosier,Tristan Wilhelm
 5,Junior Kayaking,
 5,Volleyball,
-5,Advanced Ropes,Max Clisby,Marcus Fiorillo,Gavin Seitz,Kaiser Sklar,Jackson Alves,Matthew Martino
-5,Soccer,
-5,Pickleball,Nolan Webb,Brigham Killourie,Andre Blanchette,Bodhi Matturro
-5,WaterSkiing,Jackson Scoll,Chris Morris,Shamus Odonnell,Hunter Fonseca,Ryan Chenda,Tucker Griffin,Tyler Hehir,Carter Cagnina,Caleb Perlman,Domenic Lister
+5,Advanced Ropes,Gavin Seitz,Max Clisby,Adrian Avini,Kaiser Sklar,Marcus Fiorillo
+5,Soccer,Haven Novack,Celyn Heslin,Domenic Lister,Luca Broggi,Brendan O'Connor,Nolan Abbott,Lucas Phinney
+5,Pickleball,Bodhi Matturro,Nolan Webb,Brigham Killourie,Andre Blanchette
+5,WaterSkiing,William Mudholkar,Matthew Martino,Samuel Hano,Ryan Chenda,Carter Cagnina,Tucker Griffin,Dylan Reepmeyer,Hunter Fonseca,Tyler Hehir,Caleb Perlman
 5,Kayaking,
 5,Photography,
-5,Junior Ropes,Cooper Martin,Kaden Blouin,Keeler Frehsee,Ash Briggs,Cooper Hamel
-5,Ping Pong,Louis Murphy,Cooper Griffin,Cash Griffin,Anders Smith,Thomas Lentz
+5,Junior Ropes,Kaden Blouin,Ash Briggs,Cooper Martin,Cooper Hamel,Keeler Frehsee
+5,Ping Pong,Louis Murphy,Cash Griffin,Cooper Griffin,Anders Smith,Tobey Phinney,Thomas Lentz
 5,Junior Basketball,
 5,Arts & Crafts,
-5,Canoeing,Sam Fountain,Dylan Chenda,Richie Travers,Simon Fraser,Matthew Stuparu
-5,Fitness,Coleman Lincoln,Charlie Hamblet,Matt Stuparu,Lucas Meyers,Christopher Morris,Luke Bernau,Alex Tybinkowski,Celyn Heslin,Teague Healey
+5,Canoeing,
+5,Fitness,Luke Bernau,Coleman Lincoln,Matt Stuparu,Alex Tybinkowski,Lucas Meyers,Charlie Hamblet
