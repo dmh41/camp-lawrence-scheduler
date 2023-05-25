@@ -8,4 +8,4 @@ tokens
 
 .vscode
 
-#/src/main/resources
+src/main/resources
