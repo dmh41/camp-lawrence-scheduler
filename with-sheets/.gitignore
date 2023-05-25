@@ -4,6 +4,8 @@
 # Ignore Gradle build output directory
 build
 
-# ./src/resources
+tokens
 
-# ./build/resources
+.vscode
+
+./src/resources
