@@ -10,42 +10,50 @@ public class Schedule {
     private int currentPeriod;
     private List<String> classRestrictions;
     
-    public Schedule() throws FileNotFoundException{
-        ReadFromFile r = new ReadFromFile("lib/data/data.csv");
-        List<List<String>> data = r.readData();
-        campers = new ArrayList<>();
-        int dataWidth = data.get(0).size();
-        for (int i = 0; i < data.size(); i++){
+    public Schedule(List<List<String>> p, List<List<String>> a){
 
-            String last = data.get(i).get(0);
-            String first = data.get(i).get(1);
+        campers = new ArrayList<>();
+        int dataWidth = p.get(0).size();
+        for (int i = 0; i < p.size(); i++){
+
+            String last = p.get(i).get(2);
+            String first = p.get(i).get(1);
             String name = first+" "+last;
             List<String> pref = new ArrayList<>();
 
-            for(int j = 4; j < dataWidth; j++){
-                pref.add(data.get(i).get(j));
+            for(int j = 5; j < dataWidth; j++){
+                pref.add(p.get(i).get(j));
             }
-            int cabin = Integer.parseInt(data.get(i).get(2));
-            int swim = Integer.parseInt(data.get(i).get(3));
+            int cabin = Integer.parseInt(p.get(i).get(4));
+            int swim = 1;
             Camper c = new Camper(name,last,first,pref,cabin,swim);
             campers.add(c);
         }
-        createCap();
+        createCap(a);
     }
 
     
-    public HashMap<String,List<Integer>> createCap() throws FileNotFoundException{
+    public HashMap<String,List<Integer>> createCap(List<List<String>> a){
         cap = new HashMap<>();
-        File classes = new File("lib/data/activities.csv");
-        Scanner scan = new Scanner(classes);
-        while(scan.hasNextLine()){
-            String[] temp = scan.nextLine().split(",");
-            List<Integer> i = new ArrayList<>();
-            i.add(Integer.parseInt(temp[1]));
-            i.add(Integer.parseInt(temp[2]));
-            cap.put(temp[0],i);
+        for(int i = 0; i < a.size(); i++){
+            String temp = a.get(i).get(1);
+            List<Integer> limits = new ArrayList<>();
+            limits.add(Integer.parseInt(a.get(i).get(3)));
+            limits.add(Integer.parseInt(a.get(i).get(2)));
+            cap.put(temp, limits);
         }
-        scan.close();
+
+        for(int i = 0; i < a.size(); i++){
+            String curr = a.get(i).get(4);
+            for(char c: curr.toCharArray()){
+                if(c == ','){
+                    continue;
+                }
+                if(Character.getNumericValue(c) == currentPeriod){
+                    classRestrictions.add(a.get(i).get(1));
+                }
+            }
+        }
         return cap;
     }
     
@@ -246,8 +254,15 @@ public class Schedule {
 public static void main (String[] args) throws IOException{
 
     List<HashMap<String, List<String>>> periods = new ArrayList<>();
+
+    SheetStart input = new SheetStart();
+
+    List<List<String>> data = input.getPref();
+    List<List<String>> activities = input.getAct();
+
     int numPeriod = 5;
-    Schedule s = new Schedule();
+
+    Schedule s = new Schedule(data,activities);
 
     for(int i = 0; i < numPeriod; i++){
         HashMap<String, List<String>> curr = new HashMap<String, List<String>>();
@@ -259,9 +274,11 @@ public static void main (String[] args) throws IOException{
         Collections.shuffle(s.campers);
     }
     
-    Accuracy a = new Accuracy(s.campers);
-    int ave = a.findAccClass();
-    HashMap<String, List<String>> missedPref = a.missedPref();
+    // Accuracy a = new Accuracy(s.campers);
+    // int ave = a.findAccClass();
+    // HashMap<String, List<String>> missedPref = a.missedPref();
+    HashMap<String, List<String>> missedPref = null;
+    int ave = 0;
 
     WriteToFile result = new WriteToFile(periods, s.campers, missedPref, ave);
     result.declaration();

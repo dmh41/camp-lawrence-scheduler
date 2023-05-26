@@ -97,7 +97,6 @@ public class SheetStart {
         for(int i = 0;i<13;i++){
           tempRow.add(row.get(i).toString());
         }
-        //System.out.println(tempRow);
         prefData.add(tempRow);
       }
     }
@@ -122,5 +121,6 @@ public class SheetStart {
         actData.add(tempRow);
       }
     }
+    Schedule.main(args);
   }
 }
