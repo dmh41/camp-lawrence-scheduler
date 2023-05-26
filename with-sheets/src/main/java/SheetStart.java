@@ -11,6 +11,12 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.services.sheets.v4.model.UpdateValuesResponse;
+import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.oauth2.GoogleCredentials;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,8 +26,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.*;
 
-public class SheetStart {
 
+public class SheetStart {
+  private static Sheets service;
   private static List<List<String>> prefData;
   private static List<List<String>> actData;
 
@@ -31,10 +38,10 @@ public class SheetStart {
 
   /**
    * Global instance of the scopes required by this quickstart.
-   * If modifying these scopes, delete your previously saved tokens/ folder.
+   * If modifying these scopes, dxelete your previously saved tokens/ folder.
    */
   private static final List<String> SCOPES =
-      Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
+      Collections.singletonList(SheetsScopes.SPREADSHEETS);
   private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
   /**
@@ -71,6 +78,48 @@ public class SheetStart {
     return actData;
   }
 
+  public static void writeOutput(List<Camper> data) throws GoogleJsonResponseException, IOException{
+    List<List<Object>> output = new ArrayList<>();
+    List<Object> row = new ArrayList<>();
+    for(Camper c: data){ 
+      row.add(c.getFirst());
+      row.add(c.getLast());
+      row.add(c.getCabin());
+      List<String> temp = c.getClasses();
+      for(int i = 0; i < temp.size(); i++){
+        row.add(temp.get(i));
+      }
+      output.add(row);
+      //System.out.println(row);
+      row.clear();
+    }
+
+    final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
+    final String range = "Output!A2:H150";
+    final String valueInputOption = "RAW";
+
+    UpdateValuesResponse result = null;
+    try {
+      // Updates the values in the specified range.
+      ValueRange body = new ValueRange()
+          .setValues(output);
+      result = service.spreadsheets().values().update(spreadsheetId, range, body)
+          .setValueInputOption(valueInputOption)
+          .execute();
+      System.out.printf("%d cells updated.", result.getUpdatedCells());
+    } catch (GoogleJsonResponseException e) {
+      // TODO(developer) - handle error appropriately
+      GoogleJsonError error = e.getDetails();
+      if (error.getCode() == 404) {
+        System.out.printf("Spreadsheet not found with id '%s'.\n", spreadsheetId);
+      } else {
+        throw e;
+      }
+    }
+    //return result;
+  }
+
+
   /**
    * Prints the names and majors of students in a sample spreadsheet:
    * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
@@ -79,10 +128,11 @@ public class SheetStart {
     // Build a new authorized API client service.
     final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
     final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
-    Sheets service =
+    service =
         new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
             .setApplicationName(APPLICATION_NAME)
             .build();
+    
     //Initialize for Preference read
     prefData = new ArrayList<>();
     final String range = "Preferences!A2:M150";
@@ -122,5 +172,6 @@ public class SheetStart {
       }
     }
     Schedule.main(args);
+
   }
 }

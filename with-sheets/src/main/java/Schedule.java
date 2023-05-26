@@ -52,6 +52,10 @@ public class Schedule {
             limits.add(Integer.parseInt(a.get(i).get(2)));
             cap.put(temp, limits);
         }
+        return cap;
+    }
+
+    public void createRestriction (List<List<String>> a){
         classRestrictions = new ArrayList<>();
         for(int i = 0; i < a.size(); i++){
             String curr = a.get(i).get(4);
@@ -64,7 +68,6 @@ public class Schedule {
                 }
             }
         }
-        return cap;
     }
     
 
@@ -243,10 +246,10 @@ public static void main (String[] args) throws IOException{
 
     List<HashMap<String, List<String>>> periods = new ArrayList<>();
 
-    SheetStart input = new SheetStart();
+    SheetStart module  = new SheetStart();
 
-    List<List<String>> data = input.getPref();
-    List<List<String>> activities = input.getAct();
+    List<List<String>> data = module.getPref();
+    List<List<String>> activities = module.getAct();
 
     Schedule s = new Schedule(data,activities);
 
@@ -255,6 +258,7 @@ public static void main (String[] args) throws IOException{
     for(int i = 0; i < s.numPeriods; i++){
         HashMap<String, List<String>> curr = new HashMap<String, List<String>>();
         s.currentPeriod = i+1;
+        s.createRestriction(activities);
         curr = s.period();
         periods.add(curr);
         s.classRestrictions.clear();
@@ -264,11 +268,14 @@ public static void main (String[] args) throws IOException{
     // Accuracy a = new Accuracy(s.campers);
     // int ave = a.findAccClass();
     // HashMap<String, List<String>> missedPref = a.missedPref();
+
+    module.writeOutput(s.campers);
+
     HashMap<String, List<String>> missedPref = null;
     int ave = 0;
 
     WriteToFile result = new WriteToFile(periods, s.campers, missedPref, ave);
-    result.declaration();
+    //result.declaration();
 }
 
 }
