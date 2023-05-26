@@ -9,6 +9,8 @@ public class Schedule {
     private List<Camper> campers;
     private int currentPeriod;
     private List<String> classRestrictions;
+    private List<String> swimDesignation;
+    private Integer numPeriods;
     
     public Schedule(List<List<String>> p, List<List<String>> a){
 
@@ -35,14 +37,22 @@ public class Schedule {
     
     public HashMap<String,List<Integer>> createCap(List<List<String>> a){
         cap = new HashMap<>();
+        swimDesignation = new ArrayList<>();
         for(int i = 0; i < a.size(); i++){
             String temp = a.get(i).get(1);
+            if (temp.equals("Swimming")){
+                String [] holder = a.get(i).get(5).split(":");
+                swimDesignation = new ArrayList<>();
+                for(int x = 0; x < holder.length; x++){
+                    swimDesignation.add(holder[x]);
+                }
+            }
             List<Integer> limits = new ArrayList<>();
             limits.add(Integer.parseInt(a.get(i).get(3)));
             limits.add(Integer.parseInt(a.get(i).get(2)));
             cap.put(temp, limits);
         }
-
+        classRestrictions = new ArrayList<>();
         for(int i = 0; i < a.size(); i++){
             String curr = a.get(i).get(4);
             for(char c: curr.toCharArray()){
@@ -80,45 +90,23 @@ public class Schedule {
         return temp;  
     }
     
-    public List<Integer> periodToSwim(boolean findNext){
+    public List<Integer> periodSwim(boolean findNext){
         List<Integer> periodToSwim = new ArrayList<>();
-        int p = currentPeriod;
-        if(findNext == true){
+        int p = currentPeriod-1;
+        if(findNext == true && p < numPeriods-1){
             p++;
         }
-        if (p == 1){
-            periodToSwim.add(20);
-            periodToSwim.add(17);
-            periodToSwim.add(16);
-        }
-        else if(p == 2){
-            periodToSwim.add(15);
-            periodToSwim.add(11);
-            periodToSwim.add(10);
-        }
-        else if(p == 3){
-            periodToSwim.add(9);
-            periodToSwim.add(8);
-            periodToSwim.add(7);
-            
-        }
-        else if(p == 4){
-            periodToSwim.add(13);
-            periodToSwim.add(5); 
-            periodToSwim.add(6);
-        }
-        else{
-            periodToSwim.add(1);
-            periodToSwim.add(4);
-            periodToSwim.add(3);
+        String [] temp = swimDesignation.get(p).split(",");
+        for(int i = 0; i < temp.length; i++){
+            periodToSwim.add(Integer.parseInt(temp[i]));
         }
         return periodToSwim;
     } 
     
     public HashMap<String, List<String>> period() throws FileNotFoundException{
         HashMap<String,List<String>> period = resetPeriod();
-        List<Integer> cabinToSwim = periodToSwim(false);
-        List<Integer> nextSwim = periodToSwim(true);
+        List<Integer> cabinToSwim = periodSwim(false);
+        List<Integer> nextSwim = periodSwim(true);
         for (Camper c : campers){
             int count = 0;
             boolean done = false;
@@ -228,9 +216,9 @@ public class Schedule {
                                 if(key.equals("Sailing")){
                                     continue;
                                 }
-                                if(key.equals("Advanced Ropes")){
-                                    continue;
-                                }
+                                // if(key.equals("Advanced Ropes")){
+                                //     continue;
+                                // }
                                 if(done == true || temp.getClasses().contains(key)){
                                     continue;
                                 }
@@ -260,14 +248,13 @@ public static void main (String[] args) throws IOException{
     List<List<String>> data = input.getPref();
     List<List<String>> activities = input.getAct();
 
-    int numPeriod = 5;
-
     Schedule s = new Schedule(data,activities);
 
-    for(int i = 0; i < numPeriod; i++){
+    s.numPeriods = 5;
+
+    for(int i = 0; i < s.numPeriods; i++){
         HashMap<String, List<String>> curr = new HashMap<String, List<String>>();
         s.currentPeriod = i+1;
-        s.classRestrictions = new ArrayList<>();
         curr = s.period();
         periods.add(curr);
         s.classRestrictions.clear();

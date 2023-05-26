@@ -103,7 +103,7 @@ public class SheetStart {
 
     //Initilaize for Activity Read
     actData = new ArrayList<>();
-    final String rangeAct = "Activities!A2:E30";
+    final String rangeAct = "Activities!A2:F30";
     response = service.spreadsheets().values().get(spreadsheetId, rangeAct).execute();
     values = response.getValues();
 
@@ -115,7 +115,7 @@ public class SheetStart {
         if(row.size() == 4){
           row.add("");
         }
-        for(int i = 0;i<5;i++){
+        for(int i = 0;i<6;i++){
           tempRow.add(row.get(i).toString());
         }
         actData.add(tempRow);
