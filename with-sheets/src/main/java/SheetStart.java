@@ -12,6 +12,7 @@ import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.ValueRange;
 import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.services.sheets.v4.model.ClearValuesRequest;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.services.sheets.v4.model.UpdateValuesResponse;
@@ -42,7 +43,7 @@ public class SheetStart {
    */
   private static final List<String> SCOPES =
       Collections.singletonList(SheetsScopes.SPREADSHEETS);
-  private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
+  private static final String CREDENTIALS_FILE_PATH = "credentials.json";
 
   /**
    * Creates an authorized Credential object.
@@ -78,10 +79,19 @@ public class SheetStart {
     return actData;
   }
 
+  public static void clearData() throws IOException {
+    final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
+    final String range = "Output!A2:H"; // Specify the range of data to be cleared
+
+    service.spreadsheets().values().clear(spreadsheetId, range, new ClearValuesRequest()).execute();
+    //System.out.println("Data cleared successfully.");
+}
+
   public static void writeOutput(List<Camper> data) throws GoogleJsonResponseException, IOException{
     List<List<Object>> output = new ArrayList<>();
-    List<Object> row = new ArrayList<>();
+    //List<Object> row = new ArrayList<>();
     for(Camper c: data){ 
+      List<Object> row = new ArrayList<>();
       row.add(c.getFirst());
       row.add(c.getLast());
       row.add(c.getCabin());
@@ -90,12 +100,10 @@ public class SheetStart {
         row.add(temp.get(i));
       }
       output.add(row);
-      //System.out.println(row);
-      row.clear();
     }
 
     final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
-    final String range = "Output!A2:H150";
+    final String range = "Output!A2:H";
     final String valueInputOption = "RAW";
 
     UpdateValuesResponse result = null;
@@ -113,6 +121,7 @@ public class SheetStart {
       if (error.getCode() == 404) {
         System.out.printf("Spreadsheet not found with id '%s'.\n", spreadsheetId);
       } else {
+        e.printStackTrace();
         throw e;
       }
     }
@@ -135,7 +144,7 @@ public class SheetStart {
     
     //Initialize for Preference read
     prefData = new ArrayList<>();
-    final String range = "Preferences!A2:M150";
+    final String range = "Preferences!A2:M";
     ValueRange response = service.spreadsheets().values().get(spreadsheetId, range).execute();
     List<List<Object>> values = response.getValues();
 
@@ -153,7 +162,7 @@ public class SheetStart {
 
     //Initilaize for Activity Read
     actData = new ArrayList<>();
-    final String rangeAct = "Activities!A2:F30";
+    final String rangeAct = "Activities!A2:F";
     response = service.spreadsheets().values().get(spreadsheetId, rangeAct).execute();
     values = response.getValues();
 

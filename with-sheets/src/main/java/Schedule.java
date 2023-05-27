@@ -264,18 +264,10 @@ public static void main (String[] args) throws IOException{
         s.classRestrictions.clear();
         Collections.shuffle(s.campers);
     }
-    
-    // Accuracy a = new Accuracy(s.campers);
-    // int ave = a.findAccClass();
-    // HashMap<String, List<String>> missedPref = a.missedPref();
 
+    module.clearData();
     module.writeOutput(s.campers);
 
-    HashMap<String, List<String>> missedPref = null;
-    int ave = 0;
-
-    WriteToFile result = new WriteToFile(periods, s.campers, missedPref, ave);
-    //result.declaration();
 }
 
 }
