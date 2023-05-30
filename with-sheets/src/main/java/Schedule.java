@@ -17,7 +17,7 @@ public class Schedule {
         campers = new ArrayList<>();
         int dataWidth = p.get(0).size();
         for (int i = 0; i < p.size(); i++){
-
+            String campName = p.get(i).get(0);
             String last = p.get(i).get(2);
             String first = p.get(i).get(1);
             String name = first+" "+last;
@@ -28,7 +28,7 @@ public class Schedule {
             }
             int cabin = Integer.parseInt(p.get(i).get(4));
             int swim = 1;
-            Camper c = new Camper(name,last,first,pref,cabin,swim);
+            Camper c = new Camper(name,last,first,pref,cabin,swim, campName);
             campers.add(c);
         }
         createCap(a);
@@ -89,7 +89,7 @@ public class Schedule {
                 continue;
             }
         }
-        Camper temp = new Camper(null,null,null,null,-1,-1);
+        Camper temp = new Camper(null,null,null,null,-1,-1, null);
         return temp;  
     }
     

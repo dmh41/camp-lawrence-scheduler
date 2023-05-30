@@ -81,7 +81,7 @@ public class SheetStart {
 
   public static void clearData() throws IOException {
     final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
-    final String range = "Output!A2:H"; // Specify the range of data to be cleared
+    final String range = "Output!A2:I"; // Specify the range of data to be cleared
 
     service.spreadsheets().values().clear(spreadsheetId, range, new ClearValuesRequest()).execute();
     //System.out.println("Data cleared successfully.");
@@ -92,6 +92,7 @@ public class SheetStart {
     //List<Object> row = new ArrayList<>();
     for(Camper c: data){ 
       List<Object> row = new ArrayList<>();
+      row.add(c.getCamp());
       row.add(c.getFirst());
       row.add(c.getLast());
       row.add(c.getCabin());
@@ -103,7 +104,7 @@ public class SheetStart {
     }
 
     final String spreadsheetId = "1XwtiKc1Ir2ruhvZESVtFh9VzHdYWj0pgzBDt6b43xqk";
-    final String range = "Output!A2:H";
+    final String range = "Output!A2:I";
     final String valueInputOption = "RAW";
 
     UpdateValuesResponse result = null;

@@ -9,9 +9,10 @@ private List<String> preferences;
 private int cabin;
 private int swim;
 private List<String> classes;
+private String campName;
 
 
-public Camper(String n, String l, String f, List<String> list, int c, int s){
+public Camper(String n, String l, String f, List<String> list, int c, int s, String camp){
     this.name = n;
     this.first = f;
     this.last = l;
@@ -19,6 +20,7 @@ public Camper(String n, String l, String f, List<String> list, int c, int s){
     this.cabin = c;
     this.swim = s;
     this.classes = new ArrayList<>();
+    this.campName = camp;
 }
 
 public String getName(){
@@ -47,6 +49,10 @@ public int getSwim(){
 
 public List<String> getClasses(){
 return classes;
+}
+
+public String getCamp(){
+    return campName;
 }
 
 }
